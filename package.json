@@ -1,0 +1,31 @@
+{
+  "name": "gulp-lodash-compile",
+  "version": "1.0.0",
+  "description": "Precompile lodash templates from html files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeilleursAgents/gulp-lodash-compile.git"
+  },
+  "keywords": [
+    "gulp",
+    "lodash",
+    "compile",
+    "template",
+    "html"
+  ],
+  "author": "MeilleursAgents",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MeilleursAgents/gulp-lodash-compile/issues"
+  },
+  "homepage": "https://github.com/MeilleursAgents/gulp-lodash-compile#readme",
+  "dependencies": {
+      "lodash": "~3.10.1",
+      "gulp-util": "~2.2.14",
+      "through": "~2.3.8"
+  }
+}
