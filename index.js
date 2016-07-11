@@ -10,14 +10,15 @@ module.exports = function(fileName, options) {
     if (!fileName) {
         throw new PluginError('gulp-hogan-compile',  'Missing fileName argument for gulp-hogan-compile');
     }
+    options = options || {};
     options = _.assign({
         newLine: gutil.linefeed,
         wrapper: 'wantering',
-        templateOptions: {},
+        templateSettings: options.templateSettings || {},
         templateName: function(file) {
             return path.basename(file.relative, path.extname(file.relative));
-        },
-    }, options || {});
+        }
+    }, options);
 
     var buffer = [],
         firstFile = null,
@@ -36,7 +37,7 @@ module.exports = function(fileName, options) {
             firstFile = file;
         }
         templateName = options.templateName(file);
-        templateContents = _.template(file.contents.toString('utf8'), false).source;
+        templateContents = _.template(file.contents.toString('utf8'), options.templateSettings).source;
         jsString = 'templates[\'' + templateName + '\'] = ' + templateContents + ';';
         buffer.push(jsString);
     }

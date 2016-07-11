@@ -49,3 +49,8 @@ Either `amd`, `commonjs` or `false` for no wrapper, defaults to `amd`. If wrappe
 ### templateName `function(file)`
 
 A function that will be passed the file and should return a name for the template. By default uses the basename of the file without an extension.
+
+### templateSettings `object`
+
+An object to pass to [_template function](https://lodash.com/docs#template)
+
